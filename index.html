@@ -13,7 +13,6 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #0A0F1E;
             color: #FFFFFF;
-            /* 日本語の改行を美しく制御 */
             line-break: strict;
             word-break: normal;
         }
@@ -35,56 +34,56 @@
             pointer-events: none;
         }
 
-        /* 句読点と単語を絶対に切り離さない、かつ意味のまとまりを守る設定 */
+        /* フレーズを保持するためのクラス（画面からはみ出さないよう配慮） */
         .keep-group {
             display: inline-block;
             white-space: nowrap;
+            max-width: 100%;
         }
 
-        /* スマホ向け：タイトルの文字サイズを限界まで大きく（横幅いっぱい） */
+        /* スマホ向け：タイトルの文字サイズを限界まで大きくし、行間を詰めて迫力を出す */
         @media (max-width: 767px) {
             .responsive-title {
-                /* 画面幅に応じて文字サイズを最大化。最小でも30pxを保証 */
-                font-size: min(9vw, 42px) !important;
-                line-height: 1.4 !important;
+                font-size: clamp(32px, 10vw, 44px) !important;
+                line-height: 1.3 !important;
                 font-weight: 900;
-                letter-spacing: -0.01em;
+                letter-spacing: -0.02em;
             }
-            /* 他のテキストも読みやすく底上げ */
-            .mobile-text-large {
-                font-size: 1.15rem !important;
+            .mobile-text-base {
+                font-size: 1.1rem !important;
             }
         }
     </style>
 </head>
-<body class="overflow-x-hidden text-white">
+<body class="overflow-x-hidden text-white w-full">
 
     <!-- ヒーローセクション -->
-    <header class="relative min-h-screen flex items-center justify-center pt-16 pb-12 px-4">
+    <header class="relative min-h-screen flex items-center justify-center pt-16 pb-12 px-4 w-full">
         <div class="bg-glow top-0 right-0"></div>
         <div class="bg-glow bottom-0 left-0"></div>
         
-        <div class="max-w-5xl mx-auto text-center relative z-10 w-full px-1">
+        <div class="max-w-full mx-auto text-center relative z-10 w-full overflow-hidden">
             <div class="inline-block px-5 py-1.5 mb-8 border border-gold rounded-full text-gold font-bold text-[11px] md:text-sm tracking-[0.2em] animate-pulse">
                 20代・30代 若手治療家へ捧ぐ
             </div>
             
-            <!-- タイトル：スマホで横幅限界まで大きく表示 -->
-            <h1 class="responsive-title md:text-7xl font-black md:leading-tight mb-10 tracking-tight">
-                <span class="keep-group">23歳で黒字院長。</span><br>
-                <span class="text-gold"><span class="keep-group">自信のなかった僕が、</span></span><br class="md:hidden">
-                <span class="keep-group">最短で売り上げ</span><br class="md:hidden">
-                <span class="keep-group">１００万円を達成した理由。</span>
+            <!-- タイトル：スマホで横幅に収まるよう適切に分解 -->
+            <h1 class="responsive-title md:text-7xl font-black md:leading-tight mb-10 tracking-tight text-white px-2">
+                <span class="keep-group">23歳で黒字院長。</span><br />
+                <span class="text-gold keep-group">自信のなかった僕が、</span><br />
+                <span class="keep-group">最短で売り上げ</span><br class="md:hidden" />
+                <span class="keep-group">１００万円を</span><br class="md:hidden" />
+                <span class="keep-group">達成した理由。</span>
             </h1>
             
-            <p class="text-[17px] md:text-2xl text-gray-400 mb-12 leading-relaxed max-w-3xl mx-auto px-2">
-                <span class="keep-group">「一点突破」のマインドセット。</span><br class="md:hidden">
-                <span class="keep-group">技術研鑽の先にある、</span><br class="md:hidden">
+            <p class="text-[17px] md:text-2xl text-gray-400 mb-12 leading-relaxed max-w-2xl mx-auto px-4">
+                <span class="keep-group">「一点突破」のマインドセット。</span><br class="md:hidden" />
+                <span class="keep-group">技術研鑽の先にある、</span><br class="md:hidden" />
                 <span class="text-white font-bold"><span class="keep-group">認知科学が導く</span><span class="keep-group">真の成功法則</span></span>を公開。
             </p>
             
-            <div class="flex flex-col items-center gap-4">
-                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="bg-gold-gradient text-black font-black py-5 px-10 md:py-6 md:px-16 rounded-full text-xl md:text-2xl shadow-[0_0_40px_rgba(212,175,55,0.4)] transition transform hover:scale-105 hover:brightness-110 flex items-center group">
+            <div class="flex flex-col items-center gap-4 px-4">
+                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full max-w-xs md:max-w-md bg-gold-gradient text-black font-black py-5 px-6 md:py-6 md:px-16 rounded-full text-lg md:text-2xl shadow-[0_0_40px_rgba(212,175,55,0.4)] transition transform hover:scale-105 flex items-center justify-center group">
                     無料で今すぐ申し込む
                     <i class="fas fa-arrow-right ml-3 transition-transform group-hover:translate-x-2"></i>
                 </a>
@@ -96,39 +95,39 @@
     <!-- 悩み共感セクション -->
     <section class="py-20 px-6 bg-[#0E1426]">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-[22px] md:text-4xl font-bold mb-14 underline decoration-gold underline-offset-[10px]">
-                <span class="keep-group">こんな「壁」に</span><br class="md:hidden">
+            <h2 class="text-[24px] md:text-4xl font-bold mb-14 underline decoration-gold underline-offset-[10px]">
+                <span class="keep-group">こんな「壁」に</span><br class="md:hidden" />
                 <span class="keep-group text-gold md:text-white">ぶつかっていませんか？</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                 <div class="p-7 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start shadow-xl">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
-                    <p class="mobile-text-large md:text-lg text-gray-300 leading-relaxed">
-                        <span class="keep-group">技術セミナーに通い続けているが、</span><br class="md:hidden">
+                    <p class="mobile-text-base md:text-lg text-gray-300 leading-relaxed">
+                        <span class="keep-group">技術セミナーに通い続けているが、</span><br class="md:hidden" />
                         <span class="keep-group">臨床での確固たる自信に繋がらない。</span>
                     </p>
                 </div>
                 <div class="p-7 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start shadow-xl">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
-                    <p class="mobile-text-large md:text-lg text-gray-300 leading-relaxed">
-                        <span class="keep-group">独立したい気持ちはあるが、</span><br class="md:hidden">
-                        <span class="keep-group">集客の不安に足がすくんで</span><br class="md:hidden">
+                    <p class="mobile-text-base md:text-lg text-gray-300 leading-relaxed">
+                        <span class="keep-group">独立したい気持ちはあるが、</span><br class="md:hidden" />
+                        <span class="keep-group">集客の不安に足がすくんで</span><br class="md:hidden" />
                         <span class="keep-group">行動できない。</span>
                     </p>
                 </div>
                 <div class="p-7 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start shadow-xl">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
-                    <p class="mobile-text-large md:text-lg text-gray-300 leading-relaxed">
-                        <span class="keep-group">「自分には何もない」と、</span><br class="md:hidden">
-                        <span class="keep-group">周りの優秀な同期と比較して</span><br class="md:hidden">
+                    <p class="mobile-text-base md:text-lg text-gray-300 leading-relaxed">
+                        <span class="keep-group">「自分には何もない」と、</span><br class="md:hidden" />
+                        <span class="keep-group">周りの優秀な同期と比較して</span><br class="md:hidden" />
                         <span class="keep-group">焦りを感じている。</span>
                     </p>
                 </div>
                 <div class="p-7 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start shadow-xl">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
-                    <p class="mobile-text-large md:text-lg text-gray-300 leading-relaxed">
-                        <span class="keep-group">「治さなきゃ」という重圧で、</span><br class="md:hidden">
+                    <p class="mobile-text-base md:text-lg text-gray-300 leading-relaxed">
+                        <span class="keep-group">「治さなきゃ」という重圧で、</span><br class="md:hidden" />
                         <span class="keep-group">心身ともに疲弊してしまっている。</span>
                     </p>
                 </div>
@@ -151,16 +150,16 @@
             
             <div class="w-full md:w-1/2">
                 <div class="text-gold font-bold tracking-widest mb-4 text-xs md:text-sm">PROFILE</div>
-                <h2 class="text-[28px] md:text-4xl font-bold mb-8 leading-snug">
-                    <span class="keep-group">星野 健太</span><br class="md:hidden">
+                <h2 class="text-[30px] md:text-4xl font-bold mb-8 leading-snug">
+                    <span class="keep-group">星野 健太</span><br class="md:hidden" />
                     <span class="text-base md:text-xl font-normal text-gray-400 md:ml-4 inline-block keep-group text-gold">院長 / 理学療法士 / 認知科学コーチ</span>
                 </h2>
                 
-                <div class="space-y-6 text-gray-200 mobile-text-large md:text-lg leading-relaxed text-left">
+                <div class="space-y-6 text-gray-200 mobile-text-base md:text-lg leading-relaxed text-left">
                     <div class="bg-gold/10 border-l-4 border-gold p-6 mb-8">
                         <p class="text-white font-bold">
-                            <span class="keep-group">「自分には何もない」と悩んだ若手時代。</span><br class="md:hidden">
-                            <span class="keep-group">現状を変えるために下した、</span><br class="md:hidden">
+                            <span class="keep-group">「自分には何もない」と悩んだ若手時代。</span><br class="md:hidden" />
+                            <span class="keep-group">現状を変えるために下した、</span><br class="md:hidden" />
                             <span class="keep-group text-gold font-black underline underline-offset-4">環境の選択がすべてを変えた。</span>
                         </p>
                     </div>
@@ -182,8 +181,8 @@
     <!-- 核心セクション -->
     <section class="py-20 px-6 bg-[#151926]">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-2xl md:text-5xl font-bold mb-20 tracking-tight">
-                <span class="keep-group">なぜ「エフィカシー」が</span><br class="md:hidden">
+            <h2 class="text-[26px] md:text-5xl font-bold mb-20 tracking-tight">
+                <span class="keep-group">なぜ「エフィカシー」が</span><br class="md:hidden" />
                 <span class="keep-group text-gold">人生を劇的に変えるのか？</span>
             </h2>
             
@@ -192,10 +191,10 @@
                     <div class="text-6xl text-gold/10 font-black absolute top-6 right-8 font-poppins group-hover:text-gold-20">01</div>
                     <i class="fas fa-rocket text-gold text-5xl mb-8"></i>
                     <h3 class="text-2xl font-bold mb-6">現状の外のゴール</h3>
-                    <p class="text-gray-300 mobile-text-large md:text-lg leading-relaxed">
-                        <span class="keep-group">「今の自分」ができることの</span><br>
-                        <span class="keep-group whitespace-normal">延長線ではなく、</span><br>
-                        <span class="text-white keep-group font-bold whitespace-normal">想像もできない高いゴール</span><span class="keep-group">を設定。</span><br>
+                    <p class="text-gray-300 mobile-text-base md:text-lg leading-relaxed">
+                        <span class="keep-group">「今の自分」ができることの</span><br />
+                        <span class="keep-group whitespace-normal">延長線ではなく、</span><br />
+                        <span class="text-white keep-group font-bold whitespace-normal">想像もできない高いゴール</span><span class="keep-group">を設定。</span><br />
                         <span class="keep-group text-gold">そこから脳の覚醒が始まります。</span>
                     </p>
                 </div>
@@ -204,9 +203,9 @@
                     <div class="text-6xl text-gold/10 font-black absolute top-6 right-8 font-poppins group-hover:text-gold-20">02</div>
                     <i class="fas fa-brain text-gold text-5xl mb-8"></i>
                     <h3 class="text-2xl font-bold mb-6">エフィカシーの向上</h3>
-                    <p class="text-gray-300 mobile-text-large md:text-lg leading-relaxed">
-                        <span class="keep-group">エフィカシーとは「自己評価」。</span><br>
-                        <span class="text-gold keep-group font-black">根拠のない自信</span><span class="keep-group whitespace-normal text-white">を科学的に積み上げ、</span><br>
+                    <p class="text-gray-300 mobile-text-base md:text-lg leading-relaxed">
+                        <span class="keep-group">エフィカシーとは「自己評価」。</span><br />
+                        <span class="text-gold keep-group font-black">根拠のない自信</span><span class="keep-group whitespace-normal text-white">を科学的に積み上げ、</span><br />
                         <span class="keep-group">行動のブレーキを完全に外します。</span>
                     </p>
                 </div>
@@ -215,11 +214,11 @@
                     <div class="text-6xl text-gold/10 font-black absolute top-6 right-8 font-poppins group-hover:text-gold-20">03</div>
                     <i class="fas fa-users text-gold text-5xl mb-8"></i>
                     <h3 class="text-2xl font-bold mb-6">環境による伝染</h3>
-                    <p class="text-gray-300 mobile-text-large md:text-lg leading-relaxed">
-                        <span class="text-white keep-group font-bold">エフィカシーは伝染します。</span><br>
-                        <span class="keep-group">基準の高い環境に</span><br>
-                        <span class="keep-group">身を置くことで、</span><br>
-                        <span class="keep-group whitespace-normal">あなたの当たり前が</span><br>
+                    <p class="text-gray-300 mobile-text-base md:text-lg leading-relaxed">
+                        <span class="text-white keep-group font-bold">エフィカシーは伝染します。</span><br />
+                        <span class="keep-group">基準の高い環境に</span><br />
+                        <span class="keep-group">身を置くことで、</span><br />
+                        <span class="keep-group whitespace-normal">あなたの当たり前が</span><br />
                         <span class="keep-group text-gold font-bold">強制的に書き換わります。</span>
                     </p>
                 </div>
@@ -230,35 +229,35 @@
     <!-- セミナー内容 -->
     <section class="py-20 px-6 text-center">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold mb-16 italic font-poppins tracking-tighter text-gold">Seminar Curriculum</h2>
+            <h2 class="text-[30px] md:text-5xl font-bold mb-16 italic font-poppins tracking-tighter text-gold">Seminar Curriculum</h2>
             
             <div class="space-y-6 text-left">
                 <div class="flex flex-col md:flex-row items-center p-7 bg-[#161B2E] rounded-3xl border-l-[10px] border-gold">
                     <div class="md:mr-8 mb-4 md:mb-0 text-4xl font-black text-gold/30 font-poppins">01</div>
                     <div class="text-center md:text-left">
-                        <h3 class="text-xl md:text-xl font-bold mb-2">なぜ、学んでも自信がつかないのか？</h3>
-                        <p class="text-gray-400 text-[15px] md:text-lg leading-relaxed">脳のホメオスタシスとマインドセットの関係性を解明</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">なぜ、学んでも自信がつかないのか？</h3>
+                        <p class="text-gray-400 text-sm md:text-lg leading-relaxed">脳のホメオスタシスとマインドセットの関係性を解明</p>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row items-center p-7 bg-[#161B2E] rounded-3xl border-l-[10px] border-gold">
                     <div class="md:mr-8 mb-4 md:mb-0 text-4xl font-black text-gold/30 font-poppins">02</div>
                     <div class="text-center md:text-left">
-                        <h3 class="text-xl md:text-xl font-bold mb-2">独立・黒字化するまでの「一点突破」法</h3>
-                        <p class="text-gray-400 text-[15px] md:text-lg leading-relaxed">星野が実践した具体的なマインドの書き換え方</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">独立・黒字化するまでの「一点突破」法</h3>
+                        <p class="text-gray-400 text-sm md:text-lg leading-relaxed">星野が実践した具体的なマインドの書き換え方</p>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row items-center p-7 bg-[#161B2E] rounded-3xl border-l-[10px] border-gold">
                     <div class="md:mr-8 mb-4 md:mb-0 text-4xl font-black text-gold/30 font-poppins">03</div>
                     <div class="text-center md:text-left">
-                        <h3 class="text-xl md:text-xl font-bold mb-2">最短で結果を出す3つの武器</h3>
-                        <p class="text-gray-400 text-[15px] md:text-lg leading-relaxed">アファメーション・成長日記・環境選択の活用術</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">最短で結果を出す3つの武器</h3>
+                        <p class="text-gray-400 text-sm md:text-lg leading-relaxed">アファメーション・成長日記・環境選択の活用術</p>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row items-center p-7 bg-[#161B2E] rounded-3xl border-l-[10px] border-gold">
                     <div class="md:mr-8 mb-4 md:mb-0 text-4xl font-black text-gold/30 font-poppins">04</div>
                     <div class="text-center md:text-left">
-                        <h3 class="text-xl md:text-xl font-bold mb-2">認知科学が導く「未来への挑戦」</h3>
-                        <p class="text-gray-400 text-[15px] md:text-lg leading-relaxed">自分ならできる。そう確信するための最終ステップ</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">認知科学が導く「未来への挑戦」</h3>
+                        <p class="text-gray-400 text-sm md:text-lg leading-relaxed">自分ならできる。そう確信するための最終ステップ</p>
                     </div>
                 </div>
             </div>
@@ -269,22 +268,28 @@
     <section class="py-24 px-6 bg-gold/5 border-y border-gold/10">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-lg md:text-3xl text-gold font-bold mb-6 tracking-widest uppercase">My Vision</h2>
-            <h3 class="text-2xl md:text-5xl font-black mb-12 leading-snug">「整体院晴々グループを日本一にする」</h3>
-            <p class="text-xl md:text-3xl text-white font-black mb-10 leading-relaxed italic">
+            <h3 class="text-[26px] md:text-5xl font-black mb-12 leading-snug">「整体院晴々グループを日本一にする」</h3>
+            
+            <p class="text-[22px] md:text-3xl text-white font-black mb-10 leading-relaxed italic px-2">
                 <span class="keep-group whitespace-normal text-gold md:text-white">「僕自身、今も夢の途中で走り続けています。」</span>
             </p>
-            <p class="text-[17px] md:text-2xl text-gray-400 mb-14 leading-relaxed px-2">
-                <span class="keep-group whitespace-normal text-white md:text-gray-400">僕が挑戦し続ける姿を見せることで、一人でも多くの仲間の背中を押したい。</span><br>
-                <span class="keep-group whitespace-normal">一人が勝つのではなく、共に高みを目指す。</span><br class="md:hidden">
-                <span class="text-gold font-black keep-group whitespace-normal">この『確信』を胸に、一緒に業界の常識を塗り替えましょう！</span>
-            </p>
             
-            <div class="mt-12">
-                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="inline-block bg-gold-gradient text-black font-black py-6 px-12 rounded-2xl text-[20px] md:text-2xl shadow-[0_0_40px_rgba(212,175,55,0.3)] transition transform hover:scale-[1.02]">
-                    <span class="keep-group">セミナーに申し込んで</span><br class="md:hidden">
+            <div class="space-y-6 md:space-y-8 mb-16">
+                <p class="text-[18px] md:text-2xl text-gray-400 leading-relaxed px-2">
+                    <span class="keep-group whitespace-normal text-white md:text-gray-400">僕が挑戦し続ける姿を見せることで、一人でも多くの仲間の背中を押したい。</span>
+                </p>
+                <p class="text-[18px] md:text-2xl text-gray-400 leading-relaxed px-2">
+                    <span class="keep-group whitespace-normal">一人が勝つのではなく、共に高みを目指す。</span><br class="md:hidden" />
+                    <span class="text-gold font-black"><span class="keep-group whitespace-normal">この『確信』を胸に、一緒に業界の常識を塗り替えましょう！</span></span>
+                </p>
+            </div>
+            
+            <div class="mt-12 px-4">
+                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full max-w-xs md:max-w-md inline-block bg-gold-gradient text-black font-black py-6 px-6 md:px-12 rounded-2xl text-[20px] md:text-2xl shadow-[0_0_40px_rgba(212,175,55,0.3)] transition transform hover:scale-[1.02]">
+                    <span class="keep-group">セミナーに申し込んで</span><br class="md:hidden" />
                     <span class="keep-group">未来を変える</span>
                 </a>
-                <p class="mt-10 text-gray-500 italic text-[11px] md:text-base leading-relaxed px-4 text-center">
+                <p class="mt-10 text-gray-500 italic text-[12px] md:text-base leading-relaxed px-4 text-center">
                     <span class="keep-group whitespace-normal">※本セミナー内で、さらに加速するための特別な環境についても詳しくお話しします</span>
                 </p>
             </div>
@@ -294,21 +299,25 @@
     <!-- FAQ -->
     <section class="py-24 px-6">
         <div class="max-w-3xl mx-auto px-2">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 italic font-poppins text-gold">QUESTIONS?</h2>
+            <h2 class="text-[28px] md:text-5xl font-bold text-center mb-16 italic font-poppins text-gold">QUESTIONS?</h2>
             <div class="space-y-10 text-left">
                 <div>
                     <h3 class="text-lg md:text-xl font-bold mb-3 text-gold flex items-start">
                         <i class="far fa-question-circle mr-3 mt-1 text-sm md:text-base"></i>
                         <span>技術セミナーとは何が違いますか？</span>
                     </h3>
-                    <p class="text-gray-300 text-[16px] md:text-lg leading-relaxed ml-7">技術の「やり方」ではなく、それを使いこなし結果を出すための「脳のOS」を書き換えるセミナーです。認知科学に基づいた再現性のある手法をお伝えします。</p>
+                    <p class="text-gray-300 text-[16px] md:text-lg leading-relaxed ml-7">
+                        技術の「やり方」ではなく、それを使いこなし結果を出すための「脳のOS」を書き換えるセミナーです。認知科学に基づいた再現性のある手法をお伝えします。
+                    </p>
                 </div>
                 <div>
                     <h3 class="text-lg md:text-xl font-bold mb-3 text-gold flex items-start">
                         <i class="far fa-question-circle mr-3 mt-1 text-sm md:text-base"></i>
                         <span>独立を考えていなくても参加できますか？</span>
                     </h3>
-                    <p class="text-gray-400 text-[16px] md:text-lg leading-relaxed ml-7">もちろんです。病院・クリニック勤務に関わらず、臨床成果を上げたい、自分自身のパフォーマンスを最大化したいすべてのセラピストに役立つ内容です。</p>
+                    <p class="text-gray-400 text-[16px] md:text-lg leading-relaxed ml-7">
+                        もちろんです。病院・クリニック勤務に関わらず、臨床成果を上げたい、自分自身のパフォーマンスを最大化したいすべてのセラピストに役立つ内容です。
+                    </p>
                 </div>
             </div>
         </div>
@@ -316,7 +325,7 @@
 
     <!-- フッター -->
     <footer class="py-20 text-center border-t border-white/5 bg-dark px-6">
-        <h2 class="text-2xl md:text-5xl font-black mb-12 leading-snug text-center">
+        <h2 class="text-[24px] md:text-5xl font-black mb-12 leading-snug text-center">
             <span class="keep-group whitespace-normal text-gold md:text-white font-bold">次は、あなたの人生を動かす番です。</span>
         </h2>
         <div class="mb-12">
