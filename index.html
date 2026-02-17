@@ -13,6 +13,9 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #0A0F1E;
             color: #FFFFFF;
+            /* 日本語の改行を美しく制御するための設定 */
+            word-break: keep-all;
+            overflow-wrap: anywhere;
         }
         .font-poppins { font-family: 'Poppins', sans-serif; }
         .bg-gold-gradient {
@@ -21,10 +24,8 @@
         .text-gold { color: #D4AF37; }
         .border-gold { border-color: #D4AF37; }
         
-        /* スムーススクロール */
         html { scroll-behavior: smooth; }
 
-        /* 装飾的な背景 */
         .bg-glow {
             position: absolute;
             width: 300px;
@@ -32,6 +33,12 @@
             background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
             z-index: 0;
             pointer-events: none;
+        }
+
+        /* 改行を制御するための特殊クラス */
+        .keep-phrase {
+            display: inline-block;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -47,17 +54,18 @@
                 20代・30代 若手治療家へ捧ぐ
             </div>
             
-            <h1 class="text-[24px] xs:text-[28px] md:text-7xl font-black leading-snug md:leading-tight mb-8 tracking-tight">
-                <span class="inline-block whitespace-nowrap">23歳で黒字院長。</span><br>
-                <span class="text-gold inline-block whitespace-nowrap">自信のなかった僕が、</span><br class="md:hidden">
-                <span class="inline-block whitespace-nowrap">最短で売り上げ</span><br class="md:hidden">
-                <span class="inline-block whitespace-nowrap">１００万円を達成した理由。</span>
+            <!-- タイトル部分：画面幅が極端に狭い場合のフォントサイズをさらに最適化 -->
+            <h1 class="text-[22px] sm:text-[28px] md:text-7xl font-black leading-snug md:leading-tight mb-8 tracking-tight">
+                <span class="keep-phrase">23歳で黒字院長。</span><br>
+                <span class="text-gold keep-phrase">自信のなかった僕が、</span><br class="md:hidden">
+                <span class="keep-phrase">最短で売り上げ</span><br class="md:hidden">
+                <span class="keep-phrase">１００万円を達成した理由。</span>
             </h1>
             
-            <p class="text-base md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-3xl mx-auto px-2">
-                <span class="inline-block whitespace-nowrap">「一点突破」のマインドセット。</span><br class="md:hidden">
-                <span class="inline-block whitespace-nowrap">技術研鑽の先にある、</span><br class="md:hidden">
-                <span class="text-white font-bold inline-block whitespace-nowrap">認知科学が導く真の成功法則</span>を公開。
+            <p class="text-sm sm:text-base md:text-2xl text-gray-400 mb-10 leading-relaxed max-w-3xl mx-auto px-2">
+                <span class="keep-phrase">「一点突破」のマインドセット。</span><br class="md:hidden">
+                <span class="keep-phrase">技術研鑽の先にある、</span><br class="md:hidden">
+                <span class="text-white font-bold keep-phrase">認知科学が導く真の成功法則</span>を公開。
             </p>
             
             <div class="flex flex-col items-center gap-4">
@@ -74,39 +82,39 @@
     <section class="py-20 px-6 bg-[#0E1426]">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-xl md:text-4xl font-bold mb-12 underline decoration-gold underline-offset-[10px]">
-                <span class="inline-block whitespace-nowrap">こんな「壁」に</span><br class="md:hidden">
-                <span class="inline-block text-gold md:text-white whitespace-nowrap">ぶつかっていませんか？</span>
+                <span class="keep-phrase">こんな「壁」に</span><br class="md:hidden">
+                <span class="keep-phrase text-gold md:text-white">ぶつかっていませんか？</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                 <div class="p-6 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
                     <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">技術セミナーに通い続けているが、</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">臨床での確固たる自信に繋がらない。</span>
+                        <span class="keep-phrase">技術セミナーに通い続けているが、</span><br class="md:hidden">
+                        <span class="keep-phrase">臨床での確固たる自信に繋がらない。</span>
                     </p>
                 </div>
                 <div class="p-6 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
                     <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">独立したい気持ちはあるが、</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">集客の不安に足がすくんで</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">行動できない。</span>
+                        <span class="keep-phrase">独立したい気持ちはあるが、</span><br class="md:hidden">
+                        <span class="keep-phrase">集客の不安に足がすくんで</span><br class="md:hidden">
+                        <span class="keep-phrase">行動できない。</span>
                     </p>
                 </div>
                 <div class="p-6 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
                     <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">「自分には何もない」と、</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">周りの優秀な同期と比較して</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">焦りを感じている。</span>
+                        <span class="keep-phrase">「自分には何もない」と、</span><br class="md:hidden">
+                        <span class="keep-phrase">周りの優秀な同期と比較して</span><br class="md:hidden">
+                        <span class="keep-phrase">焦りを感じている。</span>
                     </p>
                 </div>
                 <div class="p-6 md:p-8 bg-[#161B2E] border border-white/5 rounded-2xl flex items-start">
                     <i class="fas fa-exclamation-triangle text-red-500 mr-4 text-xl mt-1"></i>
                     <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">「治さなきゃ」という重圧で、</span><br class="md:hidden">
-                        <span class="inline-block whitespace-nowrap">心身ともに疲弊してしまっている。</span>
+                        <span class="keep-phrase">「治さなきゃ」という重圧で、</span><br class="md:hidden">
+                        <span class="keep-phrase">心身ともに疲弊してしまっている。</span>
                     </p>
                 </div>
             </div>
@@ -129,16 +137,16 @@
             <div class="w-full md:w-1/2">
                 <div class="text-gold font-bold tracking-widest mb-3 text-xs md:text-sm">PROFILE</div>
                 <h2 class="text-2xl md:text-4xl font-bold mb-6 leading-snug">
-                    <span class="inline-block whitespace-nowrap">星野 健太</span><br class="md:hidden">
-                    <span class="text-sm md:text-xl font-normal text-gray-400 md:ml-4 inline-block whitespace-nowrap">院長 / 理学療法士 / 認知科学コーチ</span>
+                    <span class="keep-phrase">星野 健太</span><br class="md:hidden">
+                    <span class="text-sm md:text-xl font-normal text-gray-400 md:ml-4 inline-block keep-phrase">院長 / 理学療法士 / 認知科学コーチ</span>
                 </h2>
                 
-                <div class="space-y-5 text-gray-300 text-sm md:text-lg leading-relaxed">
+                <div class="space-y-5 text-gray-300 text-sm md:text-lg leading-relaxed text-left">
                     <div class="bg-gold/10 border-l-4 border-gold p-5 mb-6">
                         <p class="text-white font-bold text-sm md:text-base">
-                            <span class="inline-block whitespace-nowrap">「自分には何もない」と悩んだ若手時代。</span><br class="md:hidden">
-                            <span class="inline-block whitespace-nowrap">現状を変えるために下した、</span><br class="md:hidden">
-                            <span class="inline-block text-gold whitespace-nowrap">環境の選択がすべてを変えた。</span>
+                            <span class="keep-phrase">「自分には何もない」と悩んだ若手時代。</span><br class="md:hidden">
+                            <span class="keep-phrase">現状を変えるために下した、</span><br class="md:hidden">
+                            <span class="keep-phrase text-gold">環境の選択がすべてを変えた。</span>
                         </p>
                     </div>
                     
@@ -146,7 +154,7 @@
                         23歳で整体院 晴々を独立開業。技術のみならず、脳科学・認知科学に基づいた「マインドの仕組み」を臨床に統合。
                     </p>
                     <p>
-                        現在は<span class="text-white font-bold">100%黒字店舗を経営</span>しながら、グループメンバーや多くのクライアントへ、パフォーマンスを最大化させる<span class="text-gold font-bold">「認知科学コーチング」</span>を提供している。
+                        現在は<span class="text-white font-bold text-gold">100%黒字店舗を経営</span>しながら、グループメンバーや多くのクライアントへ、パフォーマンスを最大化させる<span class="text-gold font-bold">「認知科学コーチング」</span>を提供している。
                     </p>
                     <p>
                         「できるかどうか」ではなく「やる」と決めた瞬間に人生は変わる。その実体験を、今度はあなたに伝えるためにこのセミナーを企画しました。
@@ -160,44 +168,44 @@
     <section class="py-20 px-6 bg-[#151926]">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-2xl md:text-5xl font-bold mb-16 tracking-tight">
-                <span class="inline-block whitespace-nowrap">なぜ「エフィカシー」が</span><br class="md:hidden">
-                <span class="inline-block text-gold whitespace-nowrap">人生を劇的に変えるのか？</span>
+                <span class="keep-phrase">なぜ「エフィカシー」が</span><br class="md:hidden">
+                <span class="keep-phrase text-gold">人生を劇的に変えるのか？</span>
             </h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all">
                     <div class="text-5xl text-gold/10 font-black absolute top-5 right-6 font-poppins group-hover:text-gold-20">01</div>
                     <i class="fas fa-rocket text-gold text-4xl mb-6"></i>
                     <h3 class="text-xl md:text-2xl font-bold mb-4">現状の外のゴール</h3>
                     <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">「今の自分」ができることの</span><br>
-                        <span class="inline-block whitespace-nowrap">延長線ではなく、</span><br>
-                        <span class="inline-block text-white whitespace-nowrap">想像もできない高いゴール</span><span class="inline-block">を設定。</span><br>
-                        <span class="inline-block whitespace-nowrap">そこから脳の覚醒が始まります。</span>
+                        <span class="keep-phrase">「今の自分」ができることの</span><br>
+                        <span class="keep-phrase">延長線ではなく、</span><br>
+                        <span class="text-white keep-phrase">想像もできない高いゴール</span><span class="keep-phrase">を設定。</span><br>
+                        <span class="keep-phrase">そこから脳の覚醒が始まります。</span>
                     </p>
                 </div>
                 
-                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all text-left">
+                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all">
                     <div class="text-5xl text-gold/10 font-black absolute top-5 right-6 font-poppins group-hover:text-gold-20">02</div>
                     <i class="fas fa-brain text-gold text-4xl mb-6"></i>
                     <h3 class="text-xl md:text-2xl font-bold mb-4">エフィカシーの向上</h3>
                     <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                        <span class="inline-block whitespace-nowrap">エフィカシーとは「自己評価」。</span><br>
-                        <span class="inline-block text-white font-bold text-gold whitespace-nowrap">根拠のない自信</span><span class="inline-block">を科学的に積み上げ、</span><br>
-                        <span class="inline-block whitespace-nowrap">行動のブレーキを完全に外します。</span>
+                        <span class="keep-phrase">エフィカシーとは「自己評価」。</span><br>
+                        <span class="text-white font-bold text-gold keep-phrase">根拠のない自信</span><span class="keep-phrase">を科学的に積み上げ、</span><br>
+                        <span class="keep-phrase">行動のブレーキを完全に外します。</span>
                     </p>
                 </div>
                 
-                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all text-left">
+                <div class="relative p-8 md:p-10 bg-dark rounded-3xl border border-gold/20 shadow-xl group hover:border-gold transition-all">
                     <div class="text-5xl text-gold/10 font-black absolute top-5 right-6 font-poppins group-hover:text-gold-20">03</div>
                     <i class="fas fa-users text-gold text-4xl mb-6"></i>
                     <h3 class="text-xl md:text-2xl font-bold mb-4">環境による伝染</h3>
                     <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                        <span class="inline-block text-white whitespace-nowrap">エフィカシーは伝染します。</span><br>
-                        <span class="inline-block whitespace-nowrap">基準の高い環境に</span><br>
-                        <span class="inline-block whitespace-nowrap">身を置くことで、</span><br>
-                        <span class="inline-block whitespace-nowrap">あなたの当たり前が</span><br>
-                        <span class="inline-block text-gold whitespace-nowrap">強制的に書き換わります。</span>
+                        <span class="text-white keep-phrase">エフィカシーは伝染します。</span><br>
+                        <span class="keep-phrase">基準の高い環境に</span><br>
+                        <span class="keep-phrase">身を置くことで、</span><br>
+                        <span class="keep-phrase">あなたの当たり前が</span><br>
+                        <span class="keep-phrase text-gold">強制的に書き換わります。</span>
                     </p>
                 </div>
             </div>
@@ -209,7 +217,7 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-2xl md:text-5xl font-bold mb-16 italic font-poppins tracking-tighter">Seminar Curriculum</h2>
             
-            <div class="space-y-4">
+            <div class="space-y-4 text-left">
                 <div class="flex flex-col md:flex-row items-center p-6 bg-[#161B2E] rounded-3xl border-l-[10px] border-gold">
                     <div class="md:mr-8 mb-3 md:mb-0 text-3xl font-black text-gold/30 font-poppins">01</div>
                     <div class="text-center md:text-left">
@@ -246,27 +254,27 @@
     <section class="py-20 px-6 bg-gold/5 border-y border-gold/10">
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-lg md:text-3xl text-gold font-bold mb-5 tracking-widest">MY VISION</h2>
-            <h3 class="text-2xl md:text-5xl font-black mb-10 leading-snug">「整体院晴々グループを日本一にする」</h3>
+            <h3 class="text-2xl md:text-5xl font-black mb-10 leading-snug px-2">「整体院晴々グループを日本一にする」</h3>
             <p class="text-lg md:text-3xl text-white font-black mb-8 leading-relaxed italic">
-                <span class="inline-block whitespace-nowrap">「僕自身、今も夢の途中で</span><br class="md:hidden">
-                <span class="inline-block whitespace-nowrap">走り続けています。」</span>
+                <span class="keep-phrase">「僕自身、今も夢の途中で</span><br class="md:hidden">
+                <span class="keep-phrase">走り続けています。」</span>
             </p>
             <p class="text-sm md:text-2xl text-gray-400 mb-12 leading-relaxed px-4">
-                <span class="inline-block text-white md:text-gray-400 whitespace-nowrap">僕が挑戦し続ける姿を見せることで、</span><br class="md:hidden">
-                <span class="inline-block text-white md:text-gray-400 whitespace-nowrap">一人でも多くの仲間の背中を押したい。</span><br>
-                <span class="inline-block whitespace-nowrap">一人が勝つのではなく、共に高みを目指す。</span><br class="md:hidden">
-                <span class="inline-block text-gold md:text-gray-400 whitespace-nowrap">この『確信』を胸に、</span><br class="md:hidden">
-                <span class="inline-block text-gold md:text-gray-400 whitespace-nowrap">一緒に業界の常識を塗り替えましょう！</span>
+                <span class="text-white md:text-gray-400 keep-phrase">僕が挑戦し続ける姿を見せることで、</span><br class="md:hidden">
+                <span class="text-white md:text-gray-400 keep-phrase">一人でも多くの仲間の背中を押したい。</span><br>
+                <span class="keep-phrase">一人が勝つのではなく、共に高みを目指す。</span><br class="md:hidden">
+                <span class="text-gold md:text-gray-400 keep-phrase">この『確信』を胸に、</span><br class="md:hidden">
+                <span class="text-gold md:text-gray-400 keep-phrase">一緒に業界の常識を塗り替えましょう！</span>
             </p>
             
             <div class="mt-12">
-                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="inline-block bg-gold-gradient text-black font-black py-5 px-10 rounded-2xl text-lg md:text-2xl transition transform hover:scale-[1.02] shadow-[0_0_30px_rgba(212,175,55,0.2)]">
-                    <span class="inline-block whitespace-nowrap">セミナーに申し込んで</span><br class="md:hidden">
-                    <span class="inline-block whitespace-nowrap">未来を変える</span>
+                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="inline-block bg-gold-gradient text-black font-black py-6 px-10 rounded-2xl text-lg md:text-2xl transition transform hover:scale-[1.02] shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+                    <span class="keep-phrase">セミナーに申し込んで</span><br class="md:hidden">
+                    <span class="keep-phrase">未来を変える</span>
                 </a>
-                <p class="mt-8 text-gray-500 italic text-[10px] md:text-base leading-relaxed px-4">
-                    <span class="inline-block whitespace-nowrap">※本セミナー内で、さらに加速するための</span><br class="md:hidden">
-                    <span class="inline-block whitespace-nowrap">特別な環境についても詳しくお話しします</span>
+                <p class="mt-8 text-gray-500 italic text-[10px] md:text-base leading-relaxed px-4 text-center">
+                    <span class="keep-phrase">※本セミナー内で、さらに加速するための</span><br class="md:hidden">
+                    <span class="keep-phrase">特別な環境についても詳しくお話しします</span>
                 </p>
             </div>
         </div>
@@ -282,14 +290,14 @@
                         <i class="far fa-question-circle mr-3 mt-1 text-sm md:text-base"></i>
                         <span>技術セミナーとは何が違いますか？</span>
                     </h3>
-                    <p class="text-gray-400 text-xs md:text-lg leading-relaxed ml-7">技術の「やり方」ではなく、それを使いこなし結果を出すための「脳のOS」を書き換えるセミナーです。認知科学に基づいた再現性のある手法をお伝えします。</p>
+                    <p class="text-gray-400 text-sm md:text-lg leading-relaxed ml-7">技術の「やり方」ではなく、それを使いこなし結果を出すための「脳のOS」を書き換えるセミナーです。認知科学に基づいた再現性のある手法をお伝えします。</p>
                 </div>
                 <div>
                     <h3 class="text-base md:text-xl font-bold mb-2 text-gold flex items-start">
                         <i class="far fa-question-circle mr-3 mt-1 text-sm md:text-base"></i>
                         <span>独立を考えていなくても参加できますか？</span>
                     </h3>
-                    <p class="text-gray-400 text-xs md:text-lg leading-relaxed ml-7">もちろんです。病院・クリニック勤務に関わらず、臨床成果を上げたい、自分自身のパフォーマンスを最大化したいすべてのセラピストに役立つ内容です。</p>
+                    <p class="text-gray-400 text-sm md:text-lg leading-relaxed ml-7">もちろんです。病院・クリニック勤務に関わらず、臨床成果を上げたい、自分自身のパフォーマンスを最大化したいすべてのセラピストに役立つ内容です。</p>
                 </div>
             </div>
         </div>
@@ -297,9 +305,9 @@
 
     <!-- フッター -->
     <footer class="py-16 text-center border-t border-white/5 bg-dark px-6">
-        <h2 class="text-lg md:text-4xl font-black mb-10 leading-snug">
-            <span class="inline-block whitespace-nowrap">次は、あなたの人生を</span><br class="md:hidden">
-            <span class="inline-block text-gold md:text-white font-bold whitespace-nowrap">動かす番です。</span>
+        <h2 class="text-lg md:text-4xl font-black mb-10 leading-snug text-center">
+            <span class="keep-phrase">次は、あなたの人生を</span><br class="md:hidden">
+            <span class="text-gold md:text-white font-bold keep-phrase">動かす番です。</span>
         </h2>
         <div class="mb-10">
             <p class="text-gold font-bold text-xl mb-1">整体院 晴々</p>
