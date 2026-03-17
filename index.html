@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>治療家のセカンドキャリア：独立・黒字経営への変革戦略</title>
+    <title>治療家のセカンドキャリア：病院勤務から自立への道</title>
     <!-- Tailwind CSS & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -12,129 +12,130 @@
         
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #0F172A; /* 少し明るめのネイビーグレーに変更 */
-            color: #FFFFFF;
+            background-color: #FFFFFF;
+            color: #1E293B;
             line-height: 1.8;
             overflow-x: hidden;
         }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
         
-        /* プレミアムゴールドグラデーション */
+        .text-navy { color: #0F172A; }
+        .bg-navy { background-color: #0F172A; }
+        .text-gold { color: #B8964F; }
         .bg-gold-gradient {
-            background: linear-gradient(135deg, #E5C36E 0%, #B8964F 100%);
+            background: linear-gradient(135deg, #D4AF37 0%, #B8964F 100%);
         }
-        .text-gold { color: #E5C36E; }
-        .border-gold { border-color: #E5C36E; }
         
         html { scroll-behavior: smooth; }
 
-        /* 背景に奥行きを出すグロー */
-        .bg-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(229, 195, 110, 0.1) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
+        /* スマホで文字が端に寄りすぎないための調整 */
+        .container-px {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
         }
 
-        /* 文字の泣き別れ防止 */
-        .keep-all {
-            display: inline-block;
-            word-break: keep-all;
-        }
-
-        /* 視認性を高めたカード */
+        /* 視認性の高いカード */
         .premium-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(229, 195, 110, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: #FFFFFF;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            border: 1px solid #F1F5F9;
         }
 
-        /* モバイル向けタイトルの調整 */
+        /* 数字被り解消のための背景数字 */
+        .bg-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            font-weight: 900;
+            color: #F1F5F9;
+            z-index: 0;
+            line-height: 1;
+            font-family: 'Poppins', sans-serif;
+        }
+
         @media (max-width: 767px) {
             .responsive-title {
-                font-size: clamp(34px, 11vw, 52px) !important;
+                font-size: 2.8rem !important;
                 line-height: 1.2 !important;
-                font-weight: 900;
             }
-            .mobile-padding {
-                padding-left: 1.5rem !important;
-                padding-right: 1.5rem !important;
+            .responsive-sub {
+                font-size: 1.2rem !important;
             }
+            .bg-number {
+                font-size: 6rem;
+                top: -10px;
+            }
+        }
+
+        .section-line {
+            width: 60px;
+            height: 4px;
+            background: #D4AF37;
+            margin: 1.5rem auto;
+            border-radius: 2px;
         }
     </style>
 </head>
 <body class="w-full">
 
-    <!-- ヒーローセクション -->
-    <header class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 w-full text-center overflow-hidden">
-        <div class="bg-glow -top-48 -right-48"></div>
-        <div class="bg-glow -bottom-48 -left-48"></div>
-        
-        <div class="max-w-5xl mx-auto relative z-10 w-full px-2">
-            <div class="inline-block px-6 py-2 mb-10 border border-gold rounded-full text-gold font-black text-xs md:text-sm tracking-[0.3em] animate-pulse uppercase">
+    <!-- ヒーローセクション（明るく清潔感のあるデザイン） -->
+    <header class="relative bg-white pt-20 pb-16 md:pt-32 md:pb-24 px-4 w-full text-center overflow-hidden border-b border-slate-100">
+        <div class="max-w-5xl mx-auto relative z-10 w-full">
+            <div class="inline-block px-5 py-1 mb-8 bg-slate-50 border border-slate-200 rounded-full text-slate-500 font-bold text-xs md:text-sm tracking-[0.2em] uppercase">
                 Special Online Seminar
             </div>
             
-            <h1 class="responsive-title md:text-[100px] font-black md:leading-none mb-14 tracking-tighter text-white">
-                <span class="keep-all">治療家の</span><br />
-                <span class="text-gold keep-all">セカンドキャリア</span>
+            <h1 class="responsive-title text-5xl md:text-8xl font-black md:leading-none mb-10 tracking-tighter text-navy">
+                治療家の<br />
+                <span class="text-gold">セカンドキャリア</span>
             </h1>
             
-            <div class="space-y-4 mb-16">
-                <p class="text-[22px] md:text-4xl text-white font-bold leading-tight">
-                    <span class="keep-all">手取り<span class="text-gold border-b-4 border-gold/40">15万</span>理学療法士から</span><br class="md:hidden" />
-                    <span class="keep-all">年商<span class="text-gold border-b-4 border-gold/40">2000万</span>整体師へ。</span>
+            <div class="space-y-6 mb-14">
+                <p class="text-2xl md:text-4xl text-slate-700 font-bold leading-tight">
+                    手取り<span class="text-gold border-b-4 border-gold/20">15万</span>の理学療法士が<br class="md:hidden" />
+                    年商<span class="text-gold border-b-4 border-gold/20">2000万</span>になれた本当の理由。
                 </p>
-                <p class="text-gray-300 font-medium text-lg md:text-2xl mt-8 max-w-3xl mx-auto leading-relaxed">
-                    独りで戦う怖さを捨て、仲間と最高の結果を掴む。<br class="hidden md:block" />
-                    今の自分を突破するための<span class="text-white font-black underline decoration-gold">「本音」と「仕組み」</span>を完全公開。
+                <p class="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed container-px">
+                    「このままでいいのか」と悩んでいた僕が、<br class="hidden md:block" />
+                    現状を突破するために下した<span class="text-navy font-black">『ある決断』</span>をすべてお話しします。
                 </p>
             </div>
             
-            <div class="flex flex-col items-center gap-6">
-                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full max-w-lg bg-gold-gradient text-black font-black py-6 px-8 md:py-8 md:px-16 rounded-2xl text-xl md:text-4xl shadow-[0_20px_60px_rgba(212,175,55,0.4)] transition transform hover:scale-105 active:scale-95 flex items-center justify-center group">
+            <div class="flex flex-col items-center gap-5 container-px">
+                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full max-w-lg bg-gold-gradient text-black font-black py-6 rounded-2xl text-xl md:text-3xl shadow-[0_15px_40px_rgba(212,175,55,0.3)] transition transform hover:scale-105 active:scale-95 flex items-center justify-center">
                     無料で今すぐ参加する
-                    <i class="fas fa-chevron-right ml-4 transition-transform group-hover:translate-x-3"></i>
                 </a>
-                <p class="text-gray-400 text-xs md:text-sm font-bold tracking-widest opacity-80">※ボタンをクリックするとマイスピー登録ページへ移動します</p>
+                <p class="text-slate-400 text-xs font-bold tracking-widest uppercase">※マイスピー登録ページへ移動します</p>
             </div>
         </div>
     </header>
 
-    <!-- セミナー詳細（カード形式で視認性向上） -->
-    <section class="py-24 px-6 bg-slate-900/50">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-black italic font-poppins text-gold uppercase tracking-[0.2em] relative inline-block">
-                    Seminar Info
-                </h2>
-            </div>
-            
-            <div class="premium-card p-10 md:p-16 rounded-[2.5rem] relative overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
-                    <div class="space-y-10">
+    <!-- 開催概要 -->
+    <section class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto container-px">
+            <div class="premium-card p-8 md:p-14 text-center md:text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="space-y-8">
                         <div>
-                            <p class="text-gold font-black text-xs md:text-sm mb-3 uppercase tracking-[0.3em]">Date & Time</p>
-                            <p class="text-3xl md:text-5xl font-black text-white">2026.3.28 <span class="text-xl md:text-2xl text-gold font-bold">SAT</span></p>
-                            <p class="text-3xl font-black text-white mt-2">20:00 〜</p>
+                            <p class="text-gold font-black text-xs uppercase tracking-widest mb-2">Seminar Date</p>
+                            <p class="text-3xl md:text-4xl font-black text-navy">2026.3.28 <span class="text-lg text-slate-400">SAT</span></p>
+                            <p class="text-2xl font-bold text-navy mt-1">20:00 〜 21:30</p>
                         </div>
                         <div>
-                            <p class="text-gold font-black text-xs md:text-sm mb-3 uppercase tracking-[0.3em]">Place</p>
-                            <p class="text-2xl md:text-3xl font-bold text-white">Zoomオンライン配信</p>
-                            <p class="text-gray-400 text-sm mt-2">※お申し込み後、視聴URLを即時お届けします</p>
+                            <p class="text-gold font-black text-xs uppercase tracking-widest mb-2">Access</p>
+                            <p class="text-xl md:text-2xl font-bold text-navy">Zoomオンライン配信</p>
+                            <p class="text-slate-400 text-sm mt-1">※登録後、視聴URLをメールでお送りします</p>
                         </div>
                     </div>
-                    <div class="space-y-10 md:pl-12 md:border-l border-white/10">
+                    <div class="space-y-8 md:border-l border-slate-100 md:pl-12">
                         <div>
-                            <p class="text-gold font-black text-xs md:text-sm mb-3 uppercase tracking-[0.3em]">Fee</p>
-                            <p class="text-4xl md:text-6xl font-black text-white">無料</p>
+                            <p class="text-gold font-black text-xs uppercase tracking-widest mb-2">Entry Fee</p>
+                            <p class="text-4xl md:text-5xl font-black text-navy">参加無料</p>
                         </div>
-                        <div class="p-6 bg-red-500/10 border border-red-500/30 rounded-2xl">
-                            <p class="text-red-400 font-black text-xs mb-1 uppercase tracking-widest text-center">Deadline</p>
-                            <p class="text-xl md:text-2xl font-black text-white text-center">3/27 24:00まで</p>
+                        <div class="p-5 bg-red-50 rounded-xl border border-red-100 text-center">
+                            <p class="text-red-600 font-black text-xs mb-1 uppercase tracking-widest">Deadline</p>
+                            <p class="text-xl font-black text-navy">3/27 24:00まで</p>
                         </div>
                     </div>
                 </div>
@@ -143,157 +144,146 @@
     </section>
 
     <!-- プロフィール（写真表示を安定化） -->
-    <section class="py-24 px-6 relative overflow-hidden bg-[#0F172A]">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
+    <section class="py-20 md:py-32 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 container-px">
             <div class="w-full md:w-5/12">
-                <div class="relative group">
-                    <div class="absolute -inset-4 bg-gold rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition duration-500"></div>
-                    <div class="relative rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl aspect-[3/4] bg-slate-800">
-                        <!-- 写真を絶対パス、もしくは確実に読み込める構造に -->
-                        <img src="プロフィール写真.png" 
+                <div class="relative max-w-sm mx-auto">
+                    <div class="absolute -inset-2 bg-gold-gradient rounded-2xl opacity-10 blur-xl"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-square bg-slate-50 border-4 border-white">
+                        <!-- 写真ファイル名をIMG_6835.JPGに固定 -->
+                        <img src="IMG_6835.JPG" 
                              alt="星野健太" 
-                             class="w-full h-full object-cover object-center"
-                             onerror="this.src='https://via.placeholder.com/600x800/1e293b/E5C36E?text=Hoshino+Kenta';">
+                             class="w-full h-full object-cover object-top"
+                             onerror="this.src='https://via.placeholder.com/800x800/f8fafc/B8964F?text=Kenta+Hoshino';">
                     </div>
                 </div>
             </div>
             
             <div class="w-full md:w-7/12 text-center md:text-left">
-                <div class="text-gold font-black tracking-[0.3em] mb-4 text-xs md:text-sm uppercase font-poppins">Presenter</div>
-                <h2 class="text-5xl md:text-7xl font-black mb-10 leading-tight">星野 健太</h2>
+                <div class="text-gold font-black tracking-widest mb-3 text-sm uppercase">Presenter</div>
+                <h2 class="text-4xl md:text-7xl font-black mb-8 text-navy">星野 健太</h2>
                 
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
-                    <span class="px-5 py-2 bg-slate-800 border border-gold/30 rounded-full text-gold font-bold text-sm">整体院晴々 院長</span>
-                    <span class="px-5 py-2 bg-slate-800 border border-gold/30 rounded-full text-gold font-bold text-sm">理学療法士</span>
-                    <span class="px-5 py-2 bg-slate-800 border border-gold/30 rounded-full text-gold font-bold text-sm">認知科学コーチ</span>
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-10">
+                    <span class="px-4 py-1.5 bg-navy text-white rounded-full font-bold text-xs md:text-sm">整体院晴々 院長</span>
+                    <span class="px-4 py-1.5 bg-slate-100 text-slate-600 rounded-full font-bold text-xs md:text-sm">理学療法士</span>
+                    <span class="px-4 py-1.5 bg-slate-100 text-slate-600 rounded-full font-bold text-xs md:text-sm">認知科学コーチ</span>
                 </div>
                 
-                <div class="space-y-8 text-gray-300 text-lg md:text-xl leading-relaxed text-left">
-                    <div class="premium-card p-8 rounded-2xl border-l-8 border-gold">
-                        <p class="text-white font-black text-xl md:text-2xl italic leading-snug">
-                            「手取り15万」に絶望した病院勤務時代。<br>
-                            独りで戦う怖さを捨てたあの日が、年商2000万への始発点だった。
-                        </p>
-                    </div>
-                    <p>理学療法士として病院に勤務し、手取り15万円という現実に悩みながらも「3年以内に必ず独立する」と覚悟を決め、期限付きで行動を開始。しかし、独りで試行錯誤する経営の不在に、深い恐怖を抱く。</p>
-                    <p>現在は<span class="text-white font-black border-b-2 border-gold pb-1">整体院 晴々 院長</span>として、信頼できる仲間と共に年商2000万規模の安定経営を実現。自身の経験と認知科学コーチングを統合し、次世代を担う治療家の「本当の自立」を支援している。</p>
+                <div class="space-y-6 text-slate-600 text-lg md:text-xl leading-relaxed">
+                    <p class="text-navy font-bold text-xl md:text-2xl border-l-4 border-gold pl-4 py-1 text-left">
+                        「自分には何もない」と悩んだ病院勤務時代。<br />
+                        手取り15万から這い上がるために下した、ある『決断』。
+                    </p>
+                    <p class="text-left">理学療法士として病院に勤務し、将来への経済的な不安と「このままでいいのか」という葛藤に押しつぶされそうな毎日を送っていました。「3年後に独立する」と決めてからも、独りで戦う怖さと経営の分からなさに立ち止まりかけました。</p>
+                    <p class="text-left">現在は<span class="text-navy font-black">整体院 晴々 院長</span>として、信頼できる仲間と共に<span class="text-navy font-black">年商2000万</span>を実現。自身の経験を活かし、次世代の治療家が理想のキャリアを歩むための支援をしています。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 被りを解消した「なぜできないのか？」セクション -->
-    <section class="py-32 px-6 bg-slate-950">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl md:text-6xl font-black mb-24 tracking-tighter">
-                なぜ、みんな<br />
-                <span class="text-gold">「独立」に踏み出せないのか？</span>
+    <!-- なぜできないのか？（視認性を向上させた配置） -->
+    <section class="py-24 md:py-32 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto text-center container-px">
+            <h2 class="text-3xl md:text-5xl font-black mb-4">
+                なぜ、多くの人が<br />
+                <span class="text-gold">一歩を踏み出せないのか？</span>
             </h2>
+            <div class="section-line"></div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-20">
                 <!-- Card 01 -->
-                <div class="premium-card p-12 rounded-[2.5rem] text-left relative group overflow-hidden">
-                    <!-- 数字を背面に大きく配置（透過させて被りを感じさせない） -->
-                    <div class="absolute -top-10 -right-5 text-gold/5 text-[200px] font-black font-poppins pointer-events-none select-none">01</div>
+                <div class="bg-white/5 p-10 rounded-2xl text-left border border-white/10 relative overflow-hidden group">
+                    <div class="bg-number">01</div>
                     <div class="relative z-10">
-                        <div class="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mb-8">
-                            <span class="text-gold font-black text-3xl font-poppins">01</span>
-                        </div>
-                        <h3 class="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">ホメオスタシス：<br><span class="text-gold">脳の強力なブレーキ</span></h3>
-                        <p class="text-gray-400 text-lg leading-relaxed">
-                            私たちの脳は、変化を「危険」と察知します。現状（コンフォートゾーン）に留まろうとするのは当然の生存本能。あなたが弱いのではなく、脳がそういう仕組みだからです。
-                        </p>
+                        <h3 class="text-2xl font-black mb-4 text-gold">脳のブレーキ</h3>
+                        <p class="text-slate-300 leading-relaxed">人間の脳は「今のままが一番安全」と判断し、新しい変化を全力で止めようとします。あなたが弱いからではなく、脳の仕組みがそうなっているだけです。</p>
                     </div>
                 </div>
-                
                 <!-- Card 02 -->
-                <div class="premium-card p-12 rounded-[2.5rem] text-left relative group overflow-hidden">
-                    <div class="absolute -top-10 -right-5 text-gold/5 text-[200px] font-black font-poppins pointer-events-none select-none">02</div>
+                <div class="bg-white/5 p-10 rounded-2xl text-left border border-white/10 relative overflow-hidden group">
+                    <div class="bg-number">02</div>
                     <div class="relative z-10">
-                        <div class="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center mb-8">
-                            <span class="text-gold font-black text-3xl font-poppins">02</span>
-                        </div>
-                        <h3 class="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">独りで戦うことへの<br><span class="text-gold">無意識の恐怖</span></h3>
-                        <p class="text-gray-400 text-lg leading-relaxed">
-                            経営も集客も知らないまま独りで海へ出るのは自滅行為。心の奥底にあるこの恐怖が、無意識にブレーキを踏ませ、もっともらしい言い訳を脳に捏造させます。
-                        </p>
+                        <h3 class="text-2xl font-black mb-4 text-gold">巧妙な言い訳</h3>
+                        <p class="text-slate-300 leading-relaxed">「お金がない」「時間がない」「もっと準備してから」。脳は現状を維持するために、もっともらしい『やらない理由』を天才的な速さで作ります。</p>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-24 inline-block">
-                <div class="bg-gold-gradient text-black font-black text-2xl md:text-4xl py-6 px-10 md:px-20 rounded-full shadow-2xl transform -rotate-1">
-                    「自分のなりたい未来」があるなら、やる、一択。
-                </div>
+            <div class="p-8 md:p-12 rounded-2xl bg-white/5 border-2 border-gold/30">
+                <p class="text-2xl md:text-4xl font-black italic">
+                    「なりたい未来があるなら、やる一択。」
+                </p>
+                <p class="mt-4 text-slate-400 text-lg">
+                    迷う時間を、「どうやって実現するか」を考える時間に変える。<br class="hidden md:block" />それがすべての始まりです。
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- 仲間と環境（視認性重視） -->
-    <section class="py-32 px-6 relative overflow-hidden bg-slate-900">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-7xl font-black mb-20 text-gold italic font-poppins uppercase tracking-tighter">BEYOND INDEPENDENCE</h2>
-            
-            <p class="text-3xl md:text-5xl font-black mb-20 leading-tight text-white">
-                独立がすべてではない。<br />
-                しかし、仲間と創る未来は<br class="md:hidden" /><span class="text-gold underline decoration-gold/40 decoration-8 underline-offset-[12px]">最高に楽しい。</span>
-            </p>
+    <!-- 独りの怖さ vs 仲間（明るく見やすい配置） -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="max-w-4xl mx-auto text-center container-px">
+            <h2 class="text-3xl md:text-5xl font-black text-navy mb-4">
+                「独り」で戦うリスクを知っていますか？
+            </h2>
+            <div class="section-line"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                <div class="p-10 rounded-3xl bg-red-500/5 border border-red-500/20">
-                    <i class="fas fa-times-circle text-red-500 text-4xl mb-6"></i>
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-4">独りの限界（リスク）</h3>
-                    <p class="text-gray-400 text-lg">試行錯誤に膨大な時間を溶かし、経営の不在で情熱が枯渇する。かつての僕が最も恐れた、最大の遠回りです。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mt-16 mb-20">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-times text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-navy mb-4">独りでやる限界</h3>
+                    <p class="text-slate-500">経営も集客も手探り。試行錯誤に膨大な時間を溶かし、結果が出る前に情熱が枯渇する。これが最大の遠回りです。</p>
                 </div>
-                <div class="p-10 rounded-3xl bg-green-500/5 border border-green-500/20">
-                    <i class="fas fa-check-circle text-green-500 text-4xl mb-6"></i>
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-4">環境の加速（シナジー）</h3>
-                    <p class="text-gray-400 text-lg">信頼できる仲間と仕組みを共有し、共に高みを目指す。成果だけでなく、生きる幸福度そのものが圧倒的に上がります。</p>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-gold/20 shadow-sm">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-check text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-navy mb-4">仲間と創る未来</h3>
+                    <p class="text-slate-500">同じ志を持つ仲間と仕組みを共有し、共に高みを目指す。今の環境は、かつての僕では想像もできないほど楽しく、刺激的です。</p>
                 </div>
             </div>
             
-            <p class="mt-24 text-gray-400 text-xl md:text-2xl font-bold max-w-2xl mx-auto leading-relaxed">
-                僕が独立開業して確信したこと。<br />
-                それは、<span class="text-white border-b-2 border-white">「誰と歩むか」</span>という環境の選択が、人生の結果をすべて決めるということです。
-            </p>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed">
+                    僕が独立して確信したこと。<br />
+                    それは、<span class="text-navy border-b-2 border-gold pb-1">「誰と歩むか」という環境の選択</span>が、人生のすべてを決めるということです。
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- 最終コンバージョン（明るく強調） -->
-    <section id="cta" class="py-32 px-6 text-center bg-gradient-to-b from-[#0F172A] to-[#1E293B]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-7xl font-black mb-12 tracking-tight text-white">あなたのキャリアを<br class="md:hidden" /><span class="text-gold">加速</span>させよう</h2>
-            <p class="text-gray-400 text-xl md:text-2xl mb-20 leading-relaxed">
-                理学療法士からの独立、その先の年商2000万への道。<br />
-                僕たちが用意した「最短ルート」についてお話しします。
-            </p>
+    <!-- 最終コンバージョン -->
+    <section id="cta" class="py-24 md:py-32 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-4xl mx-auto text-center container-px">
+            <h2 class="text-4xl md:text-7xl font-black mb-12 text-navy">あなたのキャリアを<br /><span class="text-gold">加速</span>させよう</h2>
             
-            <div class="premium-card p-10 md:p-20 rounded-[4rem] border-2 border-gold shadow-[0_0_100px_rgba(229,195,110,0.2)]">
-                <div class="mb-14 flex items-center justify-center gap-4 bg-red-600/20 py-4 px-8 rounded-full inline-block">
-                    <i class="fas fa-hourglass-half text-red-500 text-2xl"></i>
-                    <span class="text-white font-black text-xl md:text-2xl">申込期限：3月27日 24:00まで</span>
+            <div class="premium-card p-10 md:p-20 border-2 border-gold shadow-2xl relative">
+                <div class="mb-14 inline-flex items-center gap-4 bg-red-600 text-white py-3 px-8 rounded-full font-black text-lg md:text-xl">
+                    <i class="fas fa-clock"></i>
+                    <span>申込期限：3月27日 24:00まで</span>
                 </div>
                 
-                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full inline-block bg-gold-gradient text-black font-black py-8 rounded-3xl text-2xl md:text-5xl shadow-2xl transition transform hover:scale-[1.05] active:scale-95">
+                <a href="https://my82p.com/p/r/w2nttHCF" target="_blank" class="w-full inline-block bg-gold-gradient text-black font-black py-8 rounded-2xl text-2xl md:text-5xl shadow-2xl transition transform hover:scale-[1.05] active:scale-95">
                     無料でセミナーに申し込む
                 </a>
                 
-                <div class="mt-14 text-gray-400 font-bold text-base md:text-lg leading-relaxed space-y-3">
-                    <p>※本セミナー内で、最短で院長を目指す「整体合宿」および</p>
-                    <p>「晴々FC（フランチャイズ）」の詳細も限定公開します。</p>
+                <div class="mt-14 text-slate-400 font-bold text-lg leading-relaxed">
+                    <p>この一時間が、あなたの将来を変える<br class="md:hidden" />きっかけになることを約束します。</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- フッター -->
-    <footer class="py-24 text-center border-t border-white/5 bg-slate-950 px-6">
-        <div class="mb-16">
-            <p class="text-gold font-black text-3xl md:text-4xl mb-6">整体院 晴々</p>
-            <p class="text-gray-300 text-xl md:text-2xl font-bold">院長 / 理学療法士 / 認知科学コーチ</p>
-            <p class="text-white text-3xl md:text-4xl font-black mt-2">星野 健太</p>
+    <footer class="py-20 bg-navy text-center px-6">
+        <div class="mb-10">
+            <p class="text-gold font-black text-2xl mb-4 tracking-widest uppercase font-poppins">Seitai Harebare</p>
+            <p class="text-slate-400 text-lg font-bold">院長 / 理学療法士 / 認知科学コーチ</p>
+            <p class="text-white text-4xl font-black mt-2">星野 健太</p>
         </div>
-        <p class="text-gray-600 text-xs tracking-[0.5em] uppercase font-poppins">© 2026 KENTA HOSHINO. ALL RIGHTS RESERVED.</p>
+        <p class="text-slate-600 text-xs tracking-[0.5em] uppercase font-poppins">© 2026 KENTA HOSHINO. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
